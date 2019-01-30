@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-
+import logging
 import tornado.httpserver
 import tornado.ioloop
 import tornado.web
@@ -16,7 +16,8 @@ class TornadoBoilerplate(tornado.web.Application):
 def main():
     app = TornadoBoilerplate()
     http_server = tornado.httpserver.HTTPServer(app)
-    http_server.listen(options.port)
+    http_server.listen(4000)
+    logging.info('Server Started')
     tornado.ioloop.IOLoop.instance().start()
 
 if __name__ == "__main__":
